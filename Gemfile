@@ -7,6 +7,9 @@ end
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+# Amazon web services
+gem 'aws-sdk', '~> 3'
+
 # Shrine and dependencies
 # fastimage is used to extract the image dimensions.
 # image_processing includes some helpers for using ImageMagick

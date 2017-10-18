@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Title</th>
       <th>Year released</th>
       <th>Description</th>
@@ -15,7 +16,12 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= movie.title %></td>
+        <td>
+          <% if movie.poster_image.present? %>
+            <%= image_tag movie.poster_image_url(:thumb), alt: "Poster thumbnail for #{movie.title}"%>
+          <% end %>
+        </td>
+        <td><%= link_to movie.title, movie %></td>
         <td><%= movie.year_released %></td>
         <td><%= movie.description %></td>
         <td><%= link_to 'Show', movie %></td>
